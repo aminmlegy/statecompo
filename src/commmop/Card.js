@@ -7,13 +7,20 @@ export default class Cards extends React.Component {
     bio: "Front End",
     profession: "Developer",
     count: 0,
+    ifffff: null,
   };
   componentDidMount() {
-    setInterval(() => {
+    let contr = setInterval(() => {
       this.setState((preve) => {
         return { ...preve, count: preve.count + 1 };
       });
     }, 1000);
+    this.setState((prevv) => {
+      return { ...prevv, ifffff: contr };
+    });
+  }
+  componentWillUnmount() {
+    clearInterval(this.state.ifffff);
   }
   render() {
     return (
